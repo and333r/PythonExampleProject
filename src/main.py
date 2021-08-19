@@ -3,6 +3,7 @@
 #This keeps python package stored in a bin/ folder local to the project as opposed to the global  bin folder.
 #This also means when updating a package in one python project, it does not impact same package used in another project
 #for more info see https://code.visualstudio.com/docs/python/environments
+
 #To initialise the virtual environment use the following command in the terminal 
 #python -m venv C:\{path to project}
 #python -m venv C:\Users\dylan\Documents\Src\ExamplePythonProject\venv

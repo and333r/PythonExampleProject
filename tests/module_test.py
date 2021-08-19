@@ -39,6 +39,26 @@ def test_list_total_6() -> None:
     assert listTotal([1.0,2.0,3.0]) == 6.0
 
 def test_can_use_third_party_package() -> None:
-    assert makeRequest() == 200  
+    assert getResponseCode() == 200  
 
+#Here is an example of using a mocking framework
+#Note before this was done i has to do the following to install the mock package
+#PS C:\Users\dylan\Documents\Src\ExamplePythonProject\venv\Scripts> .\Activate.ps1
+#(venv) PS C:\Users\dylan\Documents\Src\ExamplePythonProject\venv\Scripts> pip install pytest-mock
+def test_can_make_get_request(mocker) -> None:
+    
+    #Arrange - Arrange the test ie set up mocks and expected outputs
+    expectedResult = requests.Response()
+    expectedResult.status_code = 200
+
+    #Mock actual call to a website with fake response becuase here we are testing our code, not some external site
+    mockedRequest = requests.Response()
+    mockedRequest.status_code = 200
+    mocker.patch('requests.get', return_value=mockedRequest)
+
+    #Act - Perform some action that will cause some verifiable output to be produced
+    actualResult = getRequest('https://doesntexist.secarma.com/')
+
+    #Assert - Check that action has worked as the developer intended. Assert that the expected result is equal to the actual result
+    assert actualResult.status_code == expectedResult.status_code
     

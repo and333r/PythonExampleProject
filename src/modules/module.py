@@ -16,6 +16,9 @@ def listTotal(xs: List[float]) -> float:
         result += x
     return result
 
-def makeRequest():
+def getResponseCode():
    r = requests.get("https://www.google.com")
    return r.status_code
+
+def getRequest(url):
+    return requests.get(url) 
