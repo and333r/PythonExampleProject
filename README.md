@@ -10,6 +10,21 @@ Setting up a blank project
   ``` Python: select interpreter > Enter interpreter path > Find ```
   -  Now in your project you will see .vscode directory created. Open settings.json inside of it and add: \
     `"python.terminal.activateEnvironment": true`
+3. Install project dependencies from requirements.txt
+`python -m pip install -r requirements.txt`
+
+## Package management
+Once the project is set up with a virtual environment it is ready for development and we can begin to install packages with pip from the terminal.
+For this example the requests package will be installed. To do this run the following command from vscode terminal: \
+```pip install requests``` \
+If installation is successful the package should be visable in `C:\\{projectpath}\venv\Lib\requests`
+
+To Install project dependencies from requirements.txt \ 
+`python -m pip install -r requirements.txt` \ 
+
+To modify the requirements.txt run the following commmand: \
+`(venv) PS C:\xxx\CHATool> pip freeze > requirements.txt` \
+
 # Tests
 ## Setting up test runner with vscode
 1. From vs command pallet (Ctrl+shift+P) \
@@ -24,15 +39,9 @@ Setting up a blank project
  To run just a specifc test specify a path to the test file like so: \
 ```python -m pytest tests/sometestfile.py ``` \
 
-# Some theory
-## Project initialisation - Setting up virtual environment
+# Info for beginners
+## Virtual environments
 To keep the projects python packages (code libraries) segrated from the global python packages we use a virtual environment.
 This keeps python packages stored in a folder local to the project as opposed to the global bin/ folder.
 This also means when updating a package in one python project, it does not impact same package used in another project
 for more info see https://code.visualstudio.com/docs/python/environments
-
-## Package management
-Once the project is set up with a virtual environment it is ready for development and we can begin to install packages with pip from the terminal.
-For this example the requests package will be installed. To do this run the following command from vscode terminal: \
-```pip install requests``` \
-If installation is successful the package should be visable in C:\{projectpath}\venv\Lib\requests
