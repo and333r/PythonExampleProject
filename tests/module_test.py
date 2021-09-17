@@ -1,14 +1,5 @@
 """Example of a test module"""
-#Python and pytest naming convention, notice the suffix {module name}_test.py
-
-#To run tests open vs terminal and enter the command: python -m pytest /optional path tot file/ 
-#Alternatively, to run tests using vs code test explorer
-#First enable testing, use the "Python: Configure Tests" command on the Command Palette (ctrl + alt + p)
-#Next on the command pallet use the command Python: Discover Tests. 
-#This should load the vscode test explorer in the right hand pannel. Its icon is a test flask
-#When running tests and they fail, hover over the failing test code and an alert box should tell you whats failing and why
-#For more error info run the tests using the terminal
-
+#Python and pytest naming convention: notice the suffix {module name}_test.py
 from ..src.modules.module import *
 
 #Again notice the naming convention test_{test name}
@@ -19,7 +10,7 @@ def test_total_0() -> None:
 
 #Notice how -> int test stil passes. Thats because its really just a type hint.
 #There for it doesnt affect the way the code is executed. 
-#However using a linter i expect it to throw an error
+#However if using a linter expect it to throw an error
 def test_total_1() -> int:
     assert total(0,1) == 1
 
@@ -42,9 +33,8 @@ def test_can_use_third_party_package() -> None:
     assert getResponseCode() == 200  
 
 #Here is an example of using a mocking framework
-#Note before this was done i has to do the following to install the mock package
-#PS C:\Users\dylan\Documents\Src\ExamplePythonProject\venv\Scripts> .\Activate.ps1
-#(venv) PS C:\Users\dylan\Documents\Src\ExamplePythonProject\venv\Scripts> pip install pytest-mock
+#Note before this was done i has to do the following to install the mock package like so
+#pip install pytest-mock
 def test_can_make_get_request(mocker) -> None:
     
     #Arrange - Arrange the test ie set up mocks and expected outputs
