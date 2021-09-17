@@ -1,7 +1,6 @@
 """An example python module"""
 
 from typing import List 
-#this is a third-party package. See main.py for instructions on how to install third part packages
 import requests 
 
 #Dynamic typing
