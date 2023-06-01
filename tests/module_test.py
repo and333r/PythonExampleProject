@@ -14,7 +14,7 @@ def test_total_0() -> None:
 def test_total_1() -> int:
     assert total(0,1) == 1
 
-def test_total_3():
+def test_total_3(): 
     assert total(1,2) == 3
 
 def test_total_4():
