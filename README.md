@@ -6,7 +6,7 @@ Setting up a blank project
 1. Initialise the virtual environment from vscode terminal \
  ```python -m venv ./venv```
 2. Configure automatic virtual environment initialisation
-  - Via vscode command pallet (Ctrl+shift+P): \
+  - Via vscode command pallet (Ctrl+shift+P): \ 
   ``` Python: select interpreter > Enter interpreter path > Find ```
   -  Now in your project you will see .vscode directory created. Open settings.json inside of it and add: \
     `"python.terminal.activateEnvironment": true`
